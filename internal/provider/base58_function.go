@@ -48,7 +48,7 @@ func (r Base58Function) Run(ctx context.Context, req function.RunRequest, resp *
 		return
 	}
 
-	var encoded string = base58.Encode([]byte(data))
+	var encoded = base58.Encode([]byte(data))
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, encoded))
 }
