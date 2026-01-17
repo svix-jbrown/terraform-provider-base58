@@ -85,6 +85,7 @@ func (p *Base58Provider) DataSources(ctx context.Context) []func() datasource.Da
 func (p *Base58Provider) Functions(ctx context.Context) []func() function.Function {
 	return []func() function.Function{
 		NewBase58Function,
+		NewBase58Sha256Function,
 	}
 }
 

@@ -1,6 +1,9 @@
 # Terraform base58 Provider
 
-This is a Terraform provider that exports a single function to perform [base58](https://datatracker.ietf.org/doc/html/draft-msporny-base58-03) encoding.
+This is a Terraform provider that exports related to [base58](https://datatracker.ietf.org/doc/html/draft-msporny-base58-03) encoding.
+
+ - `base58::base58()` takes a string and encodes it with base58
+ - `base58::base58sha256()` takes a string, hashes it with sha256, and encodes the raw digest with base58. This is required because terraform doesn't have byte slices...
 
 ## Requirements
 
