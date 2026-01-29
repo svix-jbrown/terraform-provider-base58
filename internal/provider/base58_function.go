@@ -1,4 +1,4 @@
-// Copyright IBM Corp. 2021, 2025
+// Copyright Svix, Inc. 2025, 2026
 // SPDX-License-Identifier: MPL-2.0
 
 package provider
