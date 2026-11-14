@@ -69,7 +69,7 @@ func TestBase58Function_Unknown(t *testing.T) {
 				resource "terraform_data" "test" {
 					input = "testvalue"
 				}
-				
+
 				output "test" {
 					value = provider::base58::base58(terraform_data.test.output)
 				}
