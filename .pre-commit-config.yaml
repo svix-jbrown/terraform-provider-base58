@@ -1,0 +1,29 @@
+repos:
+  - repo: builtin
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+      - id: check-json
+  - repo: https://github.com/google/yamlfmt
+    rev: 21ca5323a9c87ee37a434e0ca908efc0a89daa07 # frozen: v0.21.0
+    hooks:
+      - id: yamlfmt
+  - repo: https://github.com/rhysd/actionlint
+    rev: 914e7df21a07ef503a81201c76d2b11c789d3fca # frozen: v1.7.12
+    hooks:
+      - id: actionlint
+  - repo: https://github.com/zendern/pre-commit-hooks
+    rev: cb3feef6aa5b1864d521e8bc84acc35391146974 # frozen: v1.3.0
+    hooks:
+      - id: gh-actions-lock-verify-local
+      - id: gh-actions-lock-verify # manual stage: run in CI with GH_TOKEN
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: a76b92851fc9eede9f9bc4073eb55202f34eb0df # frozen: 0.39.0
+    hooks:
+      - id: check-dependabot

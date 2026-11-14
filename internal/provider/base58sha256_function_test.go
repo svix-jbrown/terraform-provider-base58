@@ -69,7 +69,7 @@ func TestBase58Sha256Function_Unknown(t *testing.T) {
 				resource "terraform_data" "test" {
 					input = "testvalue"
 				}
-				
+
 				output "test" {
 					value = provider::base58::base58sha256(terraform_data.test.output)
 				}
