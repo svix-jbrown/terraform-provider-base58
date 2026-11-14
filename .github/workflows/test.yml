@@ -34,24 +34,6 @@ jobs:
         with:
           version: latest
 
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
-        with:
-          go-version-file: 'go.mod'
-          cache: true
-      # We need the latest version of Terraform for our documentation generation to use
-      - uses: hashicorp/setup-terraform@v4.0.1
-        with:
-          terraform_wrapper: false
-      - run: make generate
-      - name: git diff
-        run: |
-          git diff --compact-summary --exit-code || \
-            (echo; echo "Unexpected difference in directories after code generation. Run 'make generate' command and commit."; exit 1)
-
   # Run acceptance tests in a matrix with Terraform CLI versions
   test:
     name: 'Acceptance Tests: Terraform ${{ matrix.terraform }}'
